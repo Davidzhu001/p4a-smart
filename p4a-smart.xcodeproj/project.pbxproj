@@ -13,6 +13,15 @@
 		159F4B091C21FB9800A8B3D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159F4B071C21FB9800A8B3D6 /* Main.storyboard */; };
 		159F4B141C21FB9800A8B3D6 /* p4a_smartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F4B131C21FB9800A8B3D6 /* p4a_smartTests.swift */; };
 		159F4B1F1C21FB9800A8B3D6 /* p4a_smartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F4B1E1C21FB9800A8B3D6 /* p4a_smartUITests.swift */; };
+		15FFDF3D1C221710006866BF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FFDF3C1C221710006866BF /* Realm.framework */; };
+		15FFDF3F1C221721006866BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FFDF3E1C221721006866BF /* RealmSwift.framework */; };
+		15FFDF401C221727006866BF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FFDF3C1C221710006866BF /* Realm.framework */; };
+		15FFDF411C221727006866BF /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15FFDF3C1C221710006866BF /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15FFDF431C22172A006866BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FFDF3E1C221721006866BF /* RealmSwift.framework */; };
+		15FFDF441C22172A006866BF /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15FFDF3E1C221721006866BF /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15FFDF461C22179F006866BF /* TextPrinterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FFDF451C22179F006866BF /* TextPrinterDataModel.swift */; };
+		15FFDF491C221F53006866BF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 15FFDF481C221F53006866BF /* index.html */; };
+		15FFDF4B1C221F71006866BF /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 15FFDF4A1C221F71006866BF /* main.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +41,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		15FFDF421C221727006866BF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15FFDF441C22172A006866BF /* RealmSwift.framework in Embed Frameworks */,
+				15FFDF411C221727006866BF /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		159F4AFE1C21FB9800A8B3D6 /* p4a-smart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p4a-smart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		159F4B011C21FB9800A8B3D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +69,11 @@
 		159F4B1A1C21FB9800A8B3D6 /* p4a-smartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "p4a-smartUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		159F4B1E1C21FB9800A8B3D6 /* p4a_smartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p4a_smartUITests.swift; sourceTree = "<group>"; };
 		159F4B201C21FB9800A8B3D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15FFDF3C1C221710006866BF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		15FFDF3E1C221721006866BF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		15FFDF451C22179F006866BF /* TextPrinterDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPrinterDataModel.swift; sourceTree = "<group>"; };
+		15FFDF481C221F53006866BF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		15FFDF4A1C221F71006866BF /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FFDF401C221727006866BF /* Realm.framework in Frameworks */,
+				15FFDF3F1C221721006866BF /* RealmSwift.framework in Frameworks */,
+				15FFDF431C22172A006866BF /* RealmSwift.framework in Frameworks */,
+				15FFDF3D1C221710006866BF /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +108,13 @@
 		159F4AF51C21FB9700A8B3D6 = {
 			isa = PBXGroup;
 			children = (
+				15FFDF471C221F48006866BF /* web */,
 				159F4B001C21FB9800A8B3D6 /* p4a-smart */,
 				159F4B121C21FB9800A8B3D6 /* p4a-smartTests */,
 				159F4B1D1C21FB9800A8B3D6 /* p4a-smartUITests */,
 				159F4AFF1C21FB9800A8B3D6 /* Products */,
+				15FFDF3E1C221721006866BF /* RealmSwift.framework */,
+				15FFDF3C1C221710006866BF /* Realm.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +133,7 @@
 			children = (
 				159F4B011C21FB9800A8B3D6 /* AppDelegate.swift */,
 				159F4B031C21FB9800A8B3D6 /* ViewController.swift */,
+				15FFDF451C22179F006866BF /* TextPrinterDataModel.swift */,
 				159F4B051C21FB9800A8B3D6 /* Assets.xcassets */,
 				159F4B071C21FB9800A8B3D6 /* Main.storyboard */,
 				159F4B0A1C21FB9800A8B3D6 /* Info.plist */,
@@ -122,6 +159,15 @@
 			path = "p4a-smartUITests";
 			sourceTree = "<group>";
 		};
+		15FFDF471C221F48006866BF /* web */ = {
+			isa = PBXGroup;
+			children = (
+				15FFDF481C221F53006866BF /* index.html */,
+				15FFDF4A1C221F71006866BF /* main.js */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +178,7 @@
 				159F4AFA1C21FB9700A8B3D6 /* Sources */,
 				159F4AFB1C21FB9700A8B3D6 /* Frameworks */,
 				159F4AFC1C21FB9700A8B3D6 /* Resources */,
+				15FFDF421C221727006866BF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,8 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FFDF491C221F53006866BF /* index.html in Resources */,
 				159F4B061C21FB9800A8B3D6 /* Assets.xcassets in Resources */,
 				159F4B091C21FB9800A8B3D6 /* Main.storyboard in Resources */,
+				15FFDF4B1C221F71006866BF /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +303,7 @@
 			files = (
 				159F4B041C21FB9800A8B3D6 /* ViewController.swift in Sources */,
 				159F4B021C21FB9800A8B3D6 /* AppDelegate.swift in Sources */,
+				15FFDF461C22179F006866BF /* TextPrinterDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +435,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "p4a-smart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wzhu.org.p4a-smart";
@@ -397,6 +451,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "p4a-smart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wzhu.org.p4a-smart";
@@ -475,6 +533,7 @@
 				159F4B251C21FB9800A8B3D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		159F4B261C21FB9800A8B3D6 /* Build configuration list for PBXNativeTarget "p4a-smartTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +542,7 @@
 				159F4B281C21FB9800A8B3D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		159F4B291C21FB9800A8B3D6 /* Build configuration list for PBXNativeTarget "p4a-smartUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +551,7 @@
 				159F4B2B1C21FB9800A8B3D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
