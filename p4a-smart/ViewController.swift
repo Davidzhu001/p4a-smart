@@ -23,23 +23,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     //realm Data configuration
     let realm = try! Realm()
     
-    
     //realm data variables
     let textPrinterData = TextPrinterData()
     
     
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        laodingWeb("index.html")
-        
-    }
-    
-    
-    
-    func laodingWeb(file: String) {
+    override func loadView() {
+        super.loadView()
         let contentController = WKUserContentController();
         let userScript = WKUserScript(
             source: "redHeader()",
@@ -59,21 +48,69 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             frame: self.containerView.bounds,
             configuration: config
         )
-        
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "WebKitDeveloperExtras")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
-        containerView.policyDelegate = self;
-        containerView.frameLoadDelegate = self;
-        containerView.UIDelegate = self;
-        containerView.editingDelegate = self;
-        let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("index", ofType:"html")!)
-        let fragUrl = NSURL(string: file, relativeToURL: try6)!
-        let request = NSURLRequest(URL: fragUrl)
-        self.webView?.loadRequest(request)
-        self.containerView.mainFrame.loadRequest(request)
+        self.view = self.webView!
     }
     
+    override func viewDidLoad()
+    {
+//        super.viewDidLoad()
+//             print(realm.path)
+        super.viewDidLoad();
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "WebKitDeveloperExtras")
+//        NSUserDefaults.standardUserDefaults().synchronize()
+//        
+//        containerView.policyDelegate = self;
+//        containerView.frameLoadDelegate = self;
+//        containerView.UIDelegate = self;
+//        containerView.editingDelegate = self;
+//         let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("index", ofType:"html")!)
+        let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("index", ofType:"html")!)
+        let fragUrl = NSURL(string: "printer.html", relativeToURL: try6)!
+        let request = NSURLRequest(URL: fragUrl)
+        self.webView?.loadRequest(request)
+        
+
+    }
+    
+    
+//    
+//    func laodingWeb(file: String) {
+//        let contentController = WKUserContentController();
+//        let userScript = WKUserScript(
+//            source: "redHeader()",
+//            injectionTime: WKUserScriptInjectionTime.AtDocumentEnd,
+//            forMainFrameOnly: true
+//        )
+//        contentController.addUserScript(userScript)
+//        contentController.addScriptMessageHandler(
+//            self,
+//            name: "callbackHandler"
+//        )
+//        
+//        let config = WKWebViewConfiguration()
+//        config.userContentController = contentController
+//        
+//        self.webView = WKWebView(
+//            frame: self.containerView.bounds,
+//            configuration: config
+//        )
+//        
+//        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "WebKitDeveloperExtras")
+//        NSUserDefaults.standardUserDefaults().synchronize()
+//        
+//        containerView.policyDelegate = self;
+//        containerView.frameLoadDelegate = self;
+//        containerView.UIDelegate = self;
+//        containerView.editingDelegate = self;
+//        let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("index", ofType:"html")!)
+//        let fragUrl = NSURL(string: file, relativeToURL: try6)!
+//        let request = NSURLRequest(URL: fragUrl)
+//        self.webView?.loadRequest(request)
+//         self.view = self.webView!
+//
+////        self.containerView.mainFrame.loadRequest(request)
+//    }
+//    
 
     
     func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
@@ -83,34 +120,40 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
     }
     
-    func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
-        self.containerView.stringByEvaluatingJavaScriptFromString("")
-    }
-
-     func webView(webView: WebView!, decidePolicyForNavigationAction actionInformation: [NSObject : AnyObject]!, request: NSURLRequest!, frame: WebFrame!, decisionListener listener: WebPolicyDecisionListener!) {
-        
-        if request.URL!.scheme == "function" {
-            
-            switch request.URL!.host!
-            {
-            case "textPrinter":
-                print("textPrinter")
-                laodingWeb("printer.html")
-            case "coverPrinter":
-                print("coverPrinter")
-            case "cutter":
-                print("Cutter")
-            case "bindler":
-                print("Bindler")
-            case "goback":
-                laodingWeb("index.html")
-            default:
-                print("action doesn't exist")
-            }
-        }
-        
-        listener.use()
-    }
+//    func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
+//        self.containerView.stringByEvaluatingJavaScriptFromString("")
+//    }
+//
+//     func webView(webView: WebView!, decidePolicyForNavigationAction actionInformation: [NSObject : AnyObject]!, request: NSURLRequest!, frame: WebFrame!, decisionListener listener: WebPolicyDecisionListener!) {
+//        
+//        if request.URL!.scheme == "function" {
+//            
+//            switch request.URL!.host!
+//            {
+//            case "textPrinter":
+//                print("textPrinter")
+//                let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("printer", ofType:"html")!)
+//                let fragUrl = NSURL(string: "printer.html", relativeToURL: try6)!
+//                let request = NSURLRequest(URL: fragUrl)
+//                self.webView?.loadRequest(request)
+//            case "coverPrinter":
+//                print("coverPrinter")
+//            case "cutter":
+//                print("Cutter")
+//            case "bindler":
+//                print("Bindler")
+//            case "goback":
+//                let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("index", ofType:"html")!)
+//                let fragUrl = NSURL(string: "printer.html", relativeToURL: try6)!
+//                let request = NSURLRequest(URL: fragUrl)
+//                self.webView?.loadRequest(request)
+//            default:
+//                print("action doesn't exist")
+//            }
+//        }
+//        
+//        listener.use()
+//    }
 
 }
 

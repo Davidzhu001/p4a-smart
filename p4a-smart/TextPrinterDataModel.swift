@@ -10,8 +10,13 @@ import RealmSwift
 import Foundation
 
 class TextPrinterData: Object {
-    
+    dynamic var id = 0
     dynamic var name = ""
     dynamic var pageNumber = ""
+    let addingPage = List<PageUpdateNumber>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
 }

@@ -3,7 +3,7 @@
 //  p4a-smart
 //
 //  Created by Weicheng Zhu on 12/16/15.
-//  Copyright © 2015 Weicheng Zhu. All rights reserved.
+//  Copyright © 2015 Weicheng Zhu. All rights reserved. For the Glory of God.
 //
 
 import Cocoa
