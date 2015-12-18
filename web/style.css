@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    background: #ff767a;
+    background: #C0C0C0;
     font-family: "PT Sans", Arial, sans-serif;
     color: #fff;
     font-size: 100%;
@@ -17,7 +17,7 @@ body {
     padding: 30px;
     font: 300 40px Lato, sans-serif;
     text-align: center;
-    color: #999;
+    color: #808080;
     background: #eee;
 }
 
@@ -48,7 +48,7 @@ section {
     padding: 1em 3em;
 }
 #set-3 {
-    background: #f06060;
+    background:   	#4682B4;
 }
 
 .hi-icon-wrap {
@@ -171,4 +171,12 @@ section {
     -ms-transform: scale(1);
     transform: scale(1);
     opacity: 1;
+}
+
+
+
+.adding_form {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0px auto;
 }
