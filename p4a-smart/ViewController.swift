@@ -17,7 +17,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     //view outlet
     @IBOutlet weak var containerView: WebView!  = nil
-    @IBOutlet weak var tableView: NSTableView!
     var webView: WKWebView?
     
     
@@ -33,8 +32,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        self.tableView.reloadData()
         
         laodingWeb("index.html")
         
@@ -78,40 +75,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
     
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int
-    {
-        return 1
-    }
-
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView?
-    {
-        let cellView = tableView.makeViewWithIdentifier("cell", owner: self) as! NSTableCellView
-        
-        cellView.textField!.stringValue = "sds"
-        
-        return cellView
-    }
-        
-
-
-
-    func tableViewSelectionDidChange(notification: NSNotification)
-    {
-        if (self.tableView.numberOfSelectedRows > 0)
-        {
-            let selectedItem = "sds"
-            
-       print(selectedItem)
-            
-        }
-        
-    }
-    
     
     func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
         if(message.name == "callbackHandler") {
@@ -126,14 +89,21 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
      func webView(webView: WebView!, decidePolicyForNavigationAction actionInformation: [NSObject : AnyObject]!, request: NSURLRequest!, frame: WebFrame!, decisionListener listener: WebPolicyDecisionListener!) {
         
-        if request.URL!.scheme == "action" {
+        if request.URL!.scheme == "function" {
             
             switch request.URL!.host!
             {
-            case "signin":
-                print("sdsdfdsd")
-
-                
+            case "textPrinter":
+                print("textPrinter")
+                laodingWeb("printer.html")
+            case "coverPrinter":
+                print("coverPrinter")
+            case "cutter":
+                print("Cutter")
+            case "bindler":
+                print("Bindler")
+            case "goback":
+                laodingWeb("index.html")
             default:
                 print("action doesn't exist")
             }

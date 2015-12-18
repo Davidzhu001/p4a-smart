@@ -22,6 +22,8 @@
 		15FFDF461C22179F006866BF /* TextPrinterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FFDF451C22179F006866BF /* TextPrinterDataModel.swift */; };
 		15FFDF491C221F53006866BF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 15FFDF481C221F53006866BF /* index.html */; };
 		15FFDF4B1C221F71006866BF /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 15FFDF4A1C221F71006866BF /* main.js */; };
+		CE1A78A91C235EBE001FEBC1 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = CE1A78A81C235EBE001FEBC1 /* style.css */; };
+		CE1A78B11C23725A001FEBC1 /* printer.html in Resources */ = {isa = PBXBuildFile; fileRef = CE1A78B01C23725A001FEBC1 /* printer.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		15FFDF451C22179F006866BF /* TextPrinterDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPrinterDataModel.swift; sourceTree = "<group>"; };
 		15FFDF481C221F53006866BF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		15FFDF4A1C221F71006866BF /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		CE1A78A81C235EBE001FEBC1 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		CE1A78B01C23725A001FEBC1 /* printer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = printer.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				15FFDF481C221F53006866BF /* index.html */,
+				CE1A78B01C23725A001FEBC1 /* printer.html */,
+				CE1A78A81C235EBE001FEBC1 /* style.css */,
 				15FFDF4A1C221F71006866BF /* main.js */,
 			);
 			path = web;
@@ -274,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				15FFDF491C221F53006866BF /* index.html in Resources */,
+				CE1A78B11C23725A001FEBC1 /* printer.html in Resources */,
 				159F4B061C21FB9800A8B3D6 /* Assets.xcassets in Resources */,
+				CE1A78A91C235EBE001FEBC1 /* style.css in Resources */,
 				159F4B091C21FB9800A8B3D6 /* Main.storyboard in Resources */,
 				15FFDF4B1C221F71006866BF /* main.js in Resources */,
 			);
