@@ -15,7 +15,7 @@
          <button class="btn btn-lg btn-primary btn-block" id="addPrinter">Add a new Printer</button>
         <section id="set-3">
             <div class="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
-                <a href="function://goback" class="hi-icon hi-icon-textPrinter">textPrinter</a>
+                <div class="hi-icon hi-icon-textPrinter" id="index">textPrinter</div>
             </div>
             
         </section>
@@ -60,6 +60,9 @@
                                  }
                                  
             });
+            $("#index").click(function(){
+                webkit.messageHandlers.indexCallback.postMessage(["redirect", "index.html"]);                 
+            })
         </script>
     </body>
 </html>

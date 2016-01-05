@@ -27,8 +27,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     let textPrinterData = TextPrinterData()
     
     
-    override func loadView() {
-        super.loadView()
+    
+    
+    func someview( callbackName: String, fileName: String) {
         let contentController = WKUserContentController();
         let userScript = WKUserScript(
             source: "redHeader()",
@@ -38,7 +39,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         contentController.addUserScript(userScript)
         contentController.addScriptMessageHandler(
             self,
-            name: "callbackHandler"
+            name: callbackName
         )
         
         let config = WKWebViewConfiguration()
@@ -49,6 +50,10 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             configuration: config
         )
         self.view = self.webView!
+        let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("index", ofType:"html")!)
+        let fragUrl = NSURL(string: fileName, relativeToURL: try6)!
+        let request = NSURLRequest(URL: fragUrl)
+        self.webView?.loadRequest(request)
     }
     
     override func viewDidLoad()
@@ -56,11 +61,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 //        super.viewDidLoad()
 //             print(realm.path)
         super.viewDidLoad();
-        let try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("index", ofType:"html")!)
-        let fragUrl = NSURL(string: "printer.html", relativeToURL: try6)!
-        let request = NSURLRequest(URL: fragUrl)
-        self.webView?.loadRequest(request)
-        
+        someview("indexCallback", fileName: "index.html")
 
     }
     
@@ -68,11 +69,22 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
     
     func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
-        if(message.name == "callbackHandler") {
-          let something = message.body
-            print(something[1])
-            print(message.frameInfo)
+        if(message.name == "indexCallback") {
+          let callbackMessageBody = message.body
+            if( String(callbackMessageBody[0]) == "redirect" ){
+                someview("indexCallback", fileName: String(callbackMessageBody[1]))
+            } else {
+                print("cannot redirect")
+            }
+        }else if(message.name == "callback")   {
+            print("sds")
+        
+        } else {
+            
+            print("nothing")
         }
+        
+    
     }
     
 
